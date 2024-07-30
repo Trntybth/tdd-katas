@@ -30,5 +30,32 @@ public class KatasTest {
         assertEquals(5, result);
 
     }
+
+    @Test
+    @DisplayName("Test mean is calculated for 3 numbers")
+    public void checkReturnsMeanOfThreeNumbers(){
+        Katas katas = new Katas();
+        double result = katas.calculateMean(new int[]{1, 2, 3});
+
+        assertEquals(2, result);
+    }
+
+    @Test
+    @DisplayName("Test mean is calculated for 4 numbers")
+    public void checkReturnsMeanOfFourNumbers(){
+        Katas katas = new Katas();
+        float result = katas.calculateMean(new int[]{40, 16, 5, 8});
+
+        assertEquals(17.25, result, 0.001);
+    }
+
+    @Test
+    @DisplayName("Test mean is calculated for awkward numbers")
+    public void checkReturnsMeanOfAwkwardNumbers(){
+        Katas katas = new Katas();
+        float result = katas.calculateMean(new int[]{5, 2, 3});
+
+        assertEquals(3.3, result, 0.1);
+    }
 }
 

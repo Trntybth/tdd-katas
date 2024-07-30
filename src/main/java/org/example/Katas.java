@@ -13,4 +13,11 @@ public class Katas {
 
         return Arrays.stream(newArray).sum();
     }
+
+    public float calculateMean(int[] integers){
+        float sum = Arrays.stream(integers).sum();
+        float result = sum / integers.length;
+
+        return result;
+    }
 }
