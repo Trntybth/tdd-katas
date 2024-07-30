@@ -67,5 +67,26 @@ public class KatasTest {
 
         assertEquals(1195, result);
    }
+
+   @Test
+    @DisplayName("Test the overall student rating for one like")
+    public void testOneLikeStudentRating(){
+       Katas katas = new Katas();
+
+       Katas.Rating result = katas.studentRating(new Katas.Rating[]{Katas.Rating.LIKE});
+
+       assertEquals(Katas.Rating.LIKE,result);
+   }
+
+    @Test
+    @DisplayName("Test the overall student rating for two likes")
+    public void testTwoLikesStudentRating(){
+        Katas katas = new Katas();
+
+        Katas.Rating result = katas.studentRating(new Katas.Rating[]{Katas.Rating.LIKE, Katas.Rating.LIKE});
+
+        assertEquals(Katas.Rating.NEUTRAL,result);
+    }
+
 }
 

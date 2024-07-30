@@ -32,5 +32,27 @@ public class Katas {
         }
         return sum;
     }
+
+    public enum Rating {
+        LIKE,
+        DISLIKE,
+        NEUTRAL
+    }
+
+    public Rating studentRating(Rating[] ratings){
+        //count number of LIKEs
+        int numberLikes = 0;
+        for (Rating rating : ratings){
+            if(rating.equals(Rating.LIKE)){
+                numberLikes++;
+            }
+        }
+        //check if the number of LIKEs can be divided by 2
+        if (numberLikes % 2 == 0){
+            return Rating.NEUTRAL;
+        } else {
+            return Rating.LIKE;
+        }
+    }
 }
 
