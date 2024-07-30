@@ -57,5 +57,15 @@ public class KatasTest {
 
         assertEquals(3.3, result, 0.1);
     }
+
+    @Test
+    @DisplayName("Test to calculate sum of ascii characters from a String")
+    public void calculateSumAscii(){
+        Katas katas = new Katas();
+
+        int result = katas.calculateAsciiSum("northcoders");
+
+        assertEquals(1195, result);
+   }
 }
 

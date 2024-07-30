@@ -14,10 +14,23 @@ public class Katas {
         return Arrays.stream(newArray).sum();
     }
 
-    public float calculateMean(int[] integers){
+    public float calculateMean(int[] integers) {
         float sum = Arrays.stream(integers).sum();
         float result = sum / integers.length;
 
         return result;
     }
+
+    public int calculateAsciiSum(String string) {
+        int sum = 0;
+        for (int i = 0; i < string.length(); i++) {
+
+            int asciiValue = (int) string.charAt(i);
+            sum += asciiValue;
+
+
+        }
+        return sum;
+    }
 }
+
