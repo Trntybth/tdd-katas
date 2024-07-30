@@ -88,5 +88,34 @@ public class KatasTest {
         assertEquals(Katas.Rating.NEUTRAL,result);
     }
 
+    @Test
+    @DisplayName("Test the overall student rating for three likes & three dislikes")
+    public void testThreeLikesTwoDislikesStudentRating(){
+        Katas katas = new Katas();
+
+        Katas.Rating result = katas.studentRating(new Katas.Rating[]{Katas.Rating.LIKE, Katas.Rating.LIKE, Katas.Rating.LIKE, Katas.Rating.DISLIKE, Katas.Rating.DISLIKE, Katas.Rating.DISLIKE});
+
+        assertEquals(Katas.Rating.NEUTRAL,result);
+    }
+
+    @Test
+    @DisplayName("Test the overall student rating for two likes & three dislikes")
+    public void testTwoLikesThreeDislikesStudentRating(){
+        Katas katas = new Katas();
+
+        Katas.Rating result = katas.studentRating(new Katas.Rating[]{Katas.Rating.LIKE, Katas.Rating.LIKE, Katas.Rating.DISLIKE, Katas.Rating.DISLIKE, Katas.Rating.DISLIKE});
+
+        assertEquals(Katas.Rating.DISLIKE,result);
+    }
+
+    @Test
+    @DisplayName("Test returns string 'northcoders' to a Caesar cipher 'abegupbqref")
+    public void testCaeserCipher(){
+        Katas katas = new Katas();
+
+        String result = katas.caeserCipher("northcoders");
+
+        assertEquals("abegupbqref" ,result);
+    }
 }
 

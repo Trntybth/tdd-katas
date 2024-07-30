@@ -40,19 +40,52 @@ public class Katas {
     }
 
     public Rating studentRating(Rating[] ratings){
-        //count number of LIKEs
+        //count number of LIKEs & DISLIKEs
         int numberLikes = 0;
+        int numberDislikes = 0;
+
         for (Rating rating : ratings){
             if(rating.equals(Rating.LIKE)){
                 numberLikes++;
+            } else if (rating.equals(Rating.DISLIKE)) {
+                numberDislikes++;
             }
         }
-        //check if the number of LIKEs can be divided by 2
-        if (numberLikes % 2 == 0){
-            return Rating.NEUTRAL;
-        } else {
-            return Rating.LIKE;
+        // getting the remainders
+        int numberLikesRemainder = numberLikes % 2;
+        int numberDislikesRemainder = numberDislikes % 2;
+
+        // creating array for switch
+        int[] likesDislikesTotal = new int[]{numberLikesRemainder, numberDislikesRemainder};
+
+        switch(Arrays.toString(likesDislikesTotal)) { //array to string for switch
+            case "[0, 0]", "[1, 1]":
+                return Rating.NEUTRAL;
+            case "[0, 1]":
+                return Rating.DISLIKE;
+            case "[1, 0]":
+                return Rating.LIKE;
+            default:
+                return Rating.NEUTRAL;
+
         }
+
+    }
+    public String caeserCipher(String string) {
+// northcoders
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
+        StringBuffer result = new StringBuffer();
+
+        for (int i = 0; i < string.length(); i++) {
+            if (Character.isUpperCase(string.charAt(i))) {
+                char currentLetter = string.charAt(i);
+                int currentAscii = (int) currentLetter;
+                (currentAscii + 13 - 65) 
+            }
+        }
+
+        return null;
     }
 }
 
